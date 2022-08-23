@@ -5,8 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
+    <link href="./styles.css" type="text/css" rel="stylesheet">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <div id="container"></div>
+    <div id="container">
+        <div id="selector">
+            <div id="numSquare">
+                <p>Squares per Side (Max 100)</p>
+                <input type="number" />
+                <button id='squareSide' type="button">Set Squares</button>
+                <button class="color" id="black" type="button">Black</button>
+                <button class="color" id="rainbow" type="button">Rainbow</button>
+            </div>
+        </div>
+        <div id="grid">
+            <div id="box"></div>
+        </div>
+    </div>
 </body>
 </html>

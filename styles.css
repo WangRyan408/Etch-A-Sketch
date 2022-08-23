@@ -1,0 +1,61 @@
+body {
+    box-sizing: content-box;
+    background-color: olive;
+    
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+#selector {
+    outline: 1px solid;
+    border-radius: 10px;
+    width: 40vw;
+    height: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+
+#numSquare {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+
+#black {
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+}
+
+.color {
+    width: 50%;
+}
+
+#grid {
+    width: 60vw;
+    outline: 1px solid;
+    height: 95vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+}
+
+#box {
+    width: 400px;
+    height: 400px;
+    outline: 1px solid;
+}
