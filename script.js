@@ -16,12 +16,11 @@ function generateGrid() {
 
         const newDiv = document.createElement('div');
         newDiv.setAttribute('class', 'grid-square');
+        newDiv.setAttribute('class', 'grid-square:hover');
         newDiv.setAttribute('style', `outline: 1px solid; background-color: white; display: grid; grid-template-columns: repeat(${six}, 1fr);`);
         newDiv.setAttribute('id', `row-${i}`);
         box.appendChild(newDiv);
 
-     
-        
     }
 
     for (let i = 0; i < six; i++) {
@@ -68,7 +67,9 @@ function customGrid() {
     }
 }
 
-
+function draw() {
+    const hover = document.createElement(``)
+}
 
 
 //shows value of input in console
@@ -77,8 +78,7 @@ function displayValue(value) {
 }
 
 generateGrid();
-
-    btn.addEventListener('click', () => customGrid());
+btn.addEventListener('click', () => customGrid());
 
 
 console.log(max);
