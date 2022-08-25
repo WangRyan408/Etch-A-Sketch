@@ -79,6 +79,7 @@ function customGrid() {
         }
 
         draw();
+        console.log(Number('5'));
     }
 }
 

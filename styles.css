@@ -6,6 +6,7 @@ body {
 
 #title {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 #container {
@@ -42,7 +43,17 @@ body {
 
 .color {
     margin-bottom: 2vh;
-    width: 50%;
+    width: 100%;
+    font-family: 'Source Serif Pro', serif;font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: darkgrey;
+}
+
+.color:hover {
+    background-color: aqua;
 }
 
 #grid {
