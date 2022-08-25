@@ -68,7 +68,16 @@ function customGrid() {
 }
 
 function draw() {
-    const hover = document.createElement(``)
+    let num = Number(numside['value']) || 16;
+
+    for (let i = 0; i < num; i++) {
+        var row = document.getElementById(`row-${i}`);
+        for (let j = 0; j < num; j++) {
+            let col = document.get 
+        }
+    }
+
+    return console.log(num);
 }
 
 
@@ -79,6 +88,5 @@ function displayValue(value) {
 
 generateGrid();
 btn.addEventListener('click', () => customGrid());
-
-
-console.log(max);
+draw();
+//console.log(draw());
