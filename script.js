@@ -52,7 +52,7 @@ function generateGrid() {
 //Generates grid based on user inputted size
 function customGrid() {
     let num = Number(numside['value']);
-    if (num <= max) {
+    if (num <= max && num != 0) {
     while(box.firstChild) {
         box.removeChild(box.firstChild);
     }
