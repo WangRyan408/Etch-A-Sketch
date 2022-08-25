@@ -54,13 +54,13 @@ body {
 }
 
 #box {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     outline: 1px solid;
     display: grid;
 }
 
-.black {
+.default {
     background-color: black;
 }
 
