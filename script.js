@@ -6,6 +6,10 @@ const clear = document.querySelector('#clear');
 const box = document.querySelector('#box');
 const max = numside.getAttribute('max');
 
+let mouseDown = false
+document.body.onmousedown = () => (mouseDown = true)
+document.body.onmouseup = () => (mouseDown = false)
+
 function generateGrid() {
     const six = 16;
 
@@ -70,13 +74,14 @@ function customGrid() {
     }
 }
 function addColor(e) {
-    e.target.style.backgroundColor = 'black';
-    console.log(document.getElementById(`row-0`).childNodes[0]);
+    if (e.type === 'mouseover' && !mouseDown) return
+    else {e.target.style.backgroundColor = 'black';}
+   
 }
 
 function removeColor(e) {
     e.target.style.backgroundColor = 'white';
-    console.log(document.getElementById(`row-0`).childNodes[0]);
+   
 }
 
 function draw() {
@@ -86,8 +91,9 @@ function draw() {
         let test = document.getElementById(`row-${i}`).children;
 
         for (let j = 0; j < test.length; j++) {
+            test[j].addEventListener('mouseover', addColor);
             test[j].addEventListener('mousedown', addColor);
-            //test[j].addEventListener('mouseenter', addColor);
+            
         }
     }
 }
@@ -104,11 +110,6 @@ function refresh() {
 }
 
 
-//shows value of input in console
-function displayValue(value) {
-    return console.log(value['value']);
-}
-
 generateGrid();
 btn.addEventListener('click', () => customGrid());
 draw();
@@ -116,5 +117,3 @@ clear.addEventListener('click', () => refresh());
 
 
 
-console.log(document.getElementsByClassName('grid-square'));
-//console.log(document.getElementById(`row-0`).childNodes[0]);
