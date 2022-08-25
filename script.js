@@ -71,11 +71,12 @@ function customGrid() {
 }
 function addColor(e) {
     e.target.style.backgroundColor = 'black';
-    
+    console.log(document.getElementById(`row-0`).childNodes[0]);
 }
 
 function removeColor(e) {
     e.target.style.backgroundColor = 'white';
+    console.log(document.getElementById(`row-0`).childNodes[0]);
 }
 
 function draw() {
@@ -92,14 +93,14 @@ function draw() {
 }
 
 function refresh() {
-    for (let i = 0; i < num; i++) {
-        let white = document.getElementById(`row-${i}`);
-
-        for (let j = 0; j < test.length; j++) {
-            white[j].style.backgroundColor = 'white';
-            //test[j].addEventListener('mouseenter', addColor);
-        }
+    
+    let white = document.getElementsByClassName('grid-square');
+    for (let j = 0; j < white.length; j++) {
+        white[j].style.backgroundColor = 'white';
+        //test[j].addEventListener('mouseenter', addColor);
     }
+    
+   
 }
 
 
@@ -110,20 +111,10 @@ function displayValue(value) {
 
 generateGrid();
 btn.addEventListener('click', () => customGrid());
-clear.addEventListener('click', refresh);
-/*
-let num = Number(numside['value']) || 16;
-
-for (let i = 0; i < num; i++) {
-    let test = document.getElementById(`row-${i}`).children;
-
-    for (let j = 0; j < test.length; j++) {
-        test[j].addEventListener('click', function(e) {
-            e.target.style.backgroundColor = 'black';
-        })
-    }
-}*/
-
 draw();
-//console.log(test[0].style.backgroundColor = 'black');
-//console.log(draw());
+clear.addEventListener('click', () => refresh());
+
+
+
+console.log(document.getElementsByClassName('grid-square'));
+//console.log(document.getElementById(`row-0`).childNodes[0]);
