@@ -2,6 +2,7 @@
 //num of sides
 const numside = document.querySelector('#num');
 const btn = document.querySelector('#squareSide');
+const clear = document.querySelector('#clear');
 const box = document.querySelector('#box');
 const max = numside.getAttribute('max');
 
@@ -16,7 +17,7 @@ function generateGrid() {
 
         const newDiv = document.createElement('div');
         newDiv.setAttribute('class', 'grid-square');
-        newDiv.setAttribute('class', 'grid-square:hover');
+        //newDiv.setAttribute('class', 'grid-square:hover');
         newDiv.setAttribute('style', `outline: 1px solid; background-color: white; display: grid; grid-template-columns: repeat(${six}, 1fr);`);
         newDiv.setAttribute('id', `row-${i}`);
         box.appendChild(newDiv);
@@ -64,20 +65,41 @@ function customGrid() {
                 rowcell.appendChild(col);
             }
         }
+
+        draw();
     }
+}
+function addColor(e) {
+    e.target.style.backgroundColor = 'black';
+    
+}
+
+function removeColor(e) {
+    e.target.style.backgroundColor = 'white';
 }
 
 function draw() {
     let num = Number(numside['value']) || 16;
 
     for (let i = 0; i < num; i++) {
-        var row = document.getElementById(`row-${i}`);
-        for (let j = 0; j < num; j++) {
-            let col = document.get 
+        let test = document.getElementById(`row-${i}`).children;
+
+        for (let j = 0; j < test.length; j++) {
+            test[j].addEventListener('mousedown', addColor);
+            //test[j].addEventListener('mouseenter', addColor);
         }
     }
+}
 
-    return console.log(num);
+function refresh() {
+    for (let i = 0; i < num; i++) {
+        let white = document.getElementById(`row-${i}`);
+
+        for (let j = 0; j < test.length; j++) {
+            white[j].style.backgroundColor = 'white';
+            //test[j].addEventListener('mouseenter', addColor);
+        }
+    }
 }
 
 
@@ -88,5 +110,20 @@ function displayValue(value) {
 
 generateGrid();
 btn.addEventListener('click', () => customGrid());
+clear.addEventListener('click', refresh);
+/*
+let num = Number(numside['value']) || 16;
+
+for (let i = 0; i < num; i++) {
+    let test = document.getElementById(`row-${i}`).children;
+
+    for (let j = 0; j < test.length; j++) {
+        test[j].addEventListener('click', function(e) {
+            e.target.style.backgroundColor = 'black';
+        })
+    }
+}*/
+
 draw();
+//console.log(test[0].style.backgroundColor = 'black');
 //console.log(draw());
