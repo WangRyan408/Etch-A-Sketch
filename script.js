@@ -41,7 +41,7 @@ function generateGrid() {
         for (let j = 0; j < six; j++) {
             const col = document.createElement('div');
             col.setAttribute('class', 'grid-square');
-            col.setAttribute('style', 'outline: 1px solid; background-color: white; grid-column: auto;');
+            col.setAttribute('style', 'outline: 1px solid; background-color: white; grid-column: auto; user-select: none;');
             col.setAttribute('id', `col-${j}`);
             rowcell.appendChild(col);
         }
@@ -72,14 +72,14 @@ function customGrid() {
             for (let j = 0; j < num; j++) {
                 const col = document.createElement('div');
                 col.setAttribute('class', 'grid-square');
-                col.setAttribute('style', 'outline: 1px solid; background-color: white; grid-column: auto;');
+                col.setAttribute('style', 'outline: 1px solid; background-color: white; grid-column: auto; user-select: none;');
                 col.setAttribute('id', `col-${j}`);
                 rowcell.appendChild(col);
             }
         }
 
         draw();
-        console.log(Number('5'));
+        //console.log(box.getAttribute('draggable'));
     }
 }
 
